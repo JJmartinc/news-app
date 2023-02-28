@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { userContext } from "../../../context/usercontext";
-import '../Home/Home.css'
-
+import Button from 'react-bootstrap/Button';
 
 class Home extends Component {
   static contextType = userContext;
@@ -32,7 +31,7 @@ class Home extends Component {
 
     return (
       <div className="home">
-        <h1 className="title">Welcome to NewsApp</h1>
+        <h1 className="title">Welcome enjoy the NewsApp</h1>
         {!user && (<div>
           <input className="inputHome" type="text" ref={this.username} onChange={this.handleChange} placeholder="Please write your username" />
           {this.state.username ? (<Button variant="outline-danger" onClick={this.sendName}>Login</Button>) : ("")}</div>
