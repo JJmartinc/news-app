@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import '../Card/Card.css'
 
 class CardComponent extends Component {
   render() {

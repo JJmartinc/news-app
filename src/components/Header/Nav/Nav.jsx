@@ -1,19 +1,28 @@
 import React, { Component } from "react";
 import { userContext } from "../../../context/usercontext";
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Nav from 'react-bootstrap/Nav';
+import '../Nav/NavBar.css';
 
-class Nav extends Component {
+class NavBar extends Component {
   render() {
-    return (<nav className="nav-bar">
+    return (<Nav className="nav-bar">
       <userContext.Consumer>
-        {({ logout, user }) => user ? <span>Hello, {user} <button onClick={logout}>Logout</button></span> : ""}
+        {({ logout, user }) => user ? <span>Hello, {user} <Button variant="btn btn-primary" onClick={logout}>Logout</Button></span> : ""}
       </userContext.Consumer>
-      <Link to="/">Home</Link>
-      <Link to="/news">List News</Link>
-      <Link to="/form">Add a new article</Link>
+      <Nav.Item>
+        <Link to="/">Home</Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Link to="/news">News</Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Link to="/form">Add an article</Link>
+      </Nav.Item>
       <Link to="/*"></Link>
-    </nav>);
+    </Nav>);
   }
 }
 
-export default Nav;
+export default NavBar;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import '../Form/Form.css'
 
 
 
@@ -20,6 +21,7 @@ class Form extends Component {
   }
   handleChange = (event) => {
     const { name, value } = event.target;
+    console.log(name, value)
     this.setState({ [name]: value });
   }
   handleSubmit = (event) => {
@@ -39,7 +41,7 @@ class Form extends Component {
 
   render() {
     return (<form onSubmit={this.handleSubmit}>
-      <h1>Add an article</h1>
+      <h1>Add a article</h1>
       <input className='input' type='text' placeholder='Write a Title' name='title' value={this.state.title} onChange={this.handleChange} />
       <input className='input' type='text' placeholder='Write an abstract' name='abstract' value={this.state.abstract} onChange={this.handleChange} />
       <input className='input' type='date' placeholder='Write a published data' name='published_date' value={this.state.published_date} onChange={this.handleChange} />

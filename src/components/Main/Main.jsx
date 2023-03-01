@@ -10,7 +10,6 @@ class Main extends Component {
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<List showForm={false} />} />
         <Route path="/form" element={<List showForm={true} />} />
-        {/* <Route path="/*" element={<NotFound />} /> */}
       </Routes>
     );
   }

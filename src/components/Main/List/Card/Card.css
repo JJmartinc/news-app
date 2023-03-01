@@ -1,0 +1,23 @@
+.container-new {
+    padding: 10px;
+    margin: 10px;
+    color: black;
+    width: 320px;
+    border: rgba(195, 115, 238, 0.725) 5px double;
+}
+
+.cardLink {
+    text-decoration: none;
+    color: #24a929;
+}
+
+.cardLink:hover {
+    text-decoration: none;
+    color: #00ff77;
+}
+
+
+.cardButtons {
+    display: flex;
+    justify-content: space-around;
+}

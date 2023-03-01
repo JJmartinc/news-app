@@ -4,10 +4,7 @@ import Form from "../Form/Form";
 import { v4 as uuidv4 } from 'uuid';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-
-
-
-
+import '../List/list.css'
 
 
 class List extends Component {
@@ -26,12 +23,11 @@ class List extends Component {
     const data = await resp.json();
     const dataApi = data.results;
     const defaultNews = dataApi.slice(2, 8)
-
+    console.log(defaultNews[2])
     this.setState({
       Articles: defaultNews
     })
   }
-
 
   addArticle = (Article) => {
     const updateArticles = [Article, ...this.state.Articles];
@@ -39,13 +35,15 @@ class List extends Component {
     setTimeout(() => { this.setState({ showMessage: false }) }, 5000);
     console.log(Article);
   }
+
   removeArticle = (i) => {
     const updateArticles = this.state.Articles.filter(
+      //? Va a retornar todos los valores donde el resultado sea true
       (Article, j) => j !== i)
     this.setState({ Articles: updateArticles, showMessage: `The article has been removed` });
     setTimeout(() => { this.setState({ showMessage: false }) }, 5000);
-
   }
+
   removeAllArticles = () => {
     this.setState({ Articles: [] })
   }
